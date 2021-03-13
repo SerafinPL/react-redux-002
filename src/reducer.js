@@ -1,4 +1,4 @@
-
+import * as actions from './action';
 
 const initialState = {
         persons: []
@@ -7,7 +7,8 @@ const initialState = {
 const reducer = (state = initialState, action) => {
 
 	switch (action.type) {
-		case 'personAdd':
+		//case 'personAdd':
+		case actions.personAdd:
 
 			const newPerson = {
              	id: new Date().getTime(), // not really unique but good enough here!
@@ -20,8 +21,8 @@ const reducer = (state = initialState, action) => {
 
 			}
 
-		case 'personDel':
-
+		//case 'personDel':
+		case actions.personDel:
 
 			return{
 				...state,

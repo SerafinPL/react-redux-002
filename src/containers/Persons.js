@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
+import * as actions from '../action';
 
 class Persons extends Component {
     // state = {
@@ -50,8 +51,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispach => {
     return{
-        personAdd: () => dispach({type: 'personAdd'}),
-        personDel: (id) => dispach({type: 'personDel', idety: id}),
+        personAdd: () =>    dispach({type: /*'personAdd'*/ actions.personAdd}),
+        personDel: (id) =>  dispach({type: /*'personDel'*/ actions.personDel, idety: id}),
 
     };
 };
