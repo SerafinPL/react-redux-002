@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
@@ -10,8 +11,8 @@ class Persons extends Component {
 
     personAddedHandler = () => {
         const newPerson = {
-            id: Math.random(), // not really unique but good enough here!
-            name: 'Max',
+            id: new Date().getTime(), // not really unique but good enough here!
+            name: 'Kuba',
             age: Math.floor( Math.random() * 40 )
         }
         this.setState( ( prevState ) => {
@@ -40,5 +41,13 @@ class Persons extends Component {
         );
     }
 }
+
+const mapStateToProps = state => {
+    return{
+        personsState: state.persons
+    }
+}
+
+//const 
 
 export default Persons;
