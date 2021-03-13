@@ -14,7 +14,7 @@ const reducer = (state = initialState, action) => {
 			const newPerson = {
              	id: new Date().getTime(), // not really unique but good enough here!
              	name: state.name,
-             	age: Math.floor( Math.random() * 40 )
+             	age: Math.floor( Math.random() * 50 )
          	}
 
          	return{

@@ -51,9 +51,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispach => {
     return{
-        personAdd: () =>        dispach({type: /*'personAdd'*/ actions.PERSON_ADD}),
-        personDel: (id) =>      dispach({type: /*'personDel'*/ actions.PERSON_DEL, idety: id}),
-        changeIn: (event) =>    dispach({type: /*'CHANGE'*/actions.CHANGE, event: event})
+        personAdd: () =>        dispach({type: /*'personAdd'*/  actions.PERSON_ADD}),
+        personDel: (id) =>      dispach({type: /*'personDel'*/  actions.PERSON_DEL, idety: id}),
+        changeIn: (event) =>    dispach({type: /*'CHANGE'*/     actions.CHANGE, event: event})
 
     };
 };
