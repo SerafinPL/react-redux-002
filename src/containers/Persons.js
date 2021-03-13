@@ -30,7 +30,7 @@ class Persons extends Component {
     render () {
         return (
             <div>
-                <AddPerson personAdded={this.props.personAdd} changeInput={this.props.changeIn}/>
+                <AddPerson personAdded={this.props.personAdd} changeInput={this.props.changeIn} value={this.props.name}/>
                 {this.props.personsState.map(person => (
                     <Person 
                         key={person.id}
@@ -45,7 +45,8 @@ class Persons extends Component {
 
 const mapStateToProps = state => {
     return{
-        personsState: state.persons
+        personsState: state.persons,
+        name: state.name
     };
 };
 
