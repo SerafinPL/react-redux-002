@@ -30,7 +30,7 @@ class Persons extends Component {
     render () {
         return (
             <div>
-                <AddPerson personAdded={this.props.personAdd} />
+                <AddPerson personAdded={this.props.personAdd} changeInput={this.props.changeIn}/>
                 {this.props.personsState.map(person => (
                     <Person 
                         key={person.id}
@@ -51,8 +51,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispach => {
     return{
-        personAdd: () =>    dispach({type: /*'personAdd'*/ actions.personAdd}),
-        personDel: (id) =>  dispach({type: /*'personDel'*/ actions.personDel, idety: id}),
+        personAdd: () =>        dispach({type: /*'personAdd'*/ actions.PERSON_ADD}),
+        personDel: (id) =>      dispach({type: /*'personDel'*/ actions.PERSON_DEL, idety: id}),
+        changeIn: (event) =>    dispach({type: /*'CHANGE'*/actions.CHANGE, event: event})
 
     };
 };

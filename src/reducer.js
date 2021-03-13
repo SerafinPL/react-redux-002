@@ -1,34 +1,44 @@
 import * as actions from './action';
 
 const initialState = {
-        persons: []
+        persons: [],
+        name: ''
     }
 
 const reducer = (state = initialState, action) => {
 
 	switch (action.type) {
 		//case 'personAdd':
-		case actions.personAdd:
+		case actions.PERSON_ADD:
 
 			const newPerson = {
              	id: new Date().getTime(), // not really unique but good enough here!
-             	name: 'Kuba',
+             	name: state.name,
              	age: Math.floor( Math.random() * 40 )
          	}
+
          	return{
-				...state,
+         		...state,
+				name: '',
 				persons: state.persons.concat(newPerson)
 
 			}
 
 		//case 'personDel':
-		case actions.personDel:
+		case actions.PERSON_DEL:
 
 			return{
 				...state,
 				persons: state.persons.filter(person => person.id !== action.idety)
 			}
-	}
+		//case 'CHANGE':
+		case actions.CHANGE:
+			
+			return{ 
+				...state,
+				name: action.event.target.value
+			}
+	} // switch
 	
 	return state;
 }

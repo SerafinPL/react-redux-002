@@ -4,7 +4,8 @@ import './AddPerson.css';
 
 const addPerson = (props) => (
     <div className="AddPerson">
-        <button onClick={props.personAdded}>Add Person</button>
+    	<input onChange={props.changeInput} type='text' placeholder='wpisz imię...'/>
+        <button onClick={props.personAdded}>Dodaj Osobę</button>
     </div>
 );
 

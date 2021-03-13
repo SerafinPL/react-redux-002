@@ -1,2 +1,3 @@
-export const personAdd = 'personAdd';
-export const personDel = 'personDel';
+export const PERSON_ADD = 'PERSON_ADD';
+export const PERSON_DEL = 'PERSON_DEL';
+export const CHANGE = 'CHANGE';
