@@ -64,11 +64,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispach => {
     return{
-        personAdd: () =>        dispach({type: /*'personAdd'*/  actions.PERSON_ADD}),
-        personAddLocal: (name, age) =>        dispach({type: /*'personAdd'*/  actions.PERSON_ADD_LOCAL, personData :{name: name, age: age} }),
-        personDel: (id) =>      dispach({type: /*'personDel'*/  actions.PERSON_DEL, idety: id}),
-        changeInName: (event) =>    dispach({type: /*'CHANGE'*/     actions.CHANGE_NAME, event: event}),
-        changeInAge: (event) =>     dispach({type: /*'CHANGE'*/     actions.CHANGE_AGE, event: event})
+        personAdd: () => dispach({type: /*'personAdd'*/  actions.PERSON_ADD}),
+        personAddLocal: (name, age) => dispach({type: /*'personAdd'*/  actions.PERSON_ADD_LOCAL, personData :{name: name, age: age} }),
+        personDel: (id) => dispach({type: /*'personDel'*/  actions.PERSON_DEL, idety: id}),
+        changeInName: (event) => dispach({type: /*'CHANGE'*/     actions.CHANGE_NAME, event: event}),
+        changeInAge: (event) => dispach({type: /*'CHANGE'*/     actions.CHANGE_AGE, event: event})
 
     };
 };
