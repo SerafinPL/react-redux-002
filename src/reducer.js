@@ -21,7 +21,7 @@ const reducer = (state = initialState, action) => {
          	return{
          		...state,
 				name: '',
-				age: '',
+				age: null,
 				persons: state.persons.concat(newPerson)
 
 			}

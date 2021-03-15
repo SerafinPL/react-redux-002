@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Person from '../components/Person/Person';
 import AddPerson from '../components/AddPerson/AddPerson';
+import AddPersonState from '../components/AddPerson/AddPersonState';
 import * as actions from '../action';
 
 class Persons extends Component {
@@ -36,6 +37,10 @@ class Persons extends Component {
                     valueName={this.props.name}
                     changeInputAge={this.props.changeInAge} 
                     valueAge={this.props.age}
+                />
+                <AddPersonState 
+                    personAdded={this.props.personAdd} 
+                    
                 />
                 {this.props.personsState.map(person => (
                     <Person 
