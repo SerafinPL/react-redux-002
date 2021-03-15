@@ -25,6 +25,21 @@ const reducer = (state = initialState, action) => {
 				persons: state.persons.concat(newPerson)
 
 			}
+		case actions.PERSON_ADD_LOCAL:
+
+			const newPersonFromLocal = {
+             	id: new Date().getTime(), // not really unique but good enough here!
+             	name: action.personData.name,
+             	age: action.personData.age//Math.floor( Math.random() * 50 )
+         	}
+
+         	return{
+         		...state,
+				name: '',
+				age: 0,
+				persons: state.persons.concat(newPersonFromLocal)
+
+			}
 
 		//case 'personDel':
 		case actions.PERSON_DEL:
