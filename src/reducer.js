@@ -3,7 +3,7 @@ import * as actions from './action';
 const initialState = {
         persons: [],
         name: '',
-        age: ''
+        age: 0
     }
 
 const reducer = (state = initialState, action) => {

@@ -17,19 +17,25 @@ const AddPerson = (props) => {
 		console.log(personAgeHook);
 	}
 
+	const makePerson = () => {
+				props.personAdd(personNameHook, personAgeHook);
+					personNameSetHook('');
+					personAgeSetHook(0);
+	}
+
+	const onEnter = (event) => {
+		
+		if (event.keyCode == 13) {
+			makePerson();
+		}
+	}
 	
 	return(
 	    <div className="AddPerson">
 	    	<h3>Dodanie osoby za pomocą Local State</h3>
-	    	<input  type='text' placeholder='wpisz imię...' onChange={nameChangeHandler} value={personNameHook}/>
-	    	<input  type='number' placeholder='wpisz wiek...' onChange={ageChangeHandler} value={personAgeHook}/>
-	        <button onClick={
-	        	() => {
-	        		props.personAdd(personNameHook, personAgeHook);
-					personNameSetHook('');
-					personAgeSetHook(0);
-				}
-			}>Dodaj Osobę</button>
+	    	<input  type='text' placeholder='wpisz imię...' onChange={nameChangeHandler} value={personNameHook} onKeyDown={(event) => onEnter(event)}/>
+	    	<input  type='number' placeholder='wpisz wiek...' onChange={ageChangeHandler} value={personAgeHook} onKeyDown={(event) => onEnter(event)}/>
+	        <button onClick={makePerson}>Dodaj Osobę</button>
 	    </div>
 	);
 }
