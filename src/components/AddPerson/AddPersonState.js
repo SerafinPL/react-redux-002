@@ -16,12 +16,20 @@ const AddPerson = (props) => {
 		personAgeSetHook(event.target.value);
 		console.log(personAgeHook);
 	}
+
+	
 	return(
 	    <div className="AddPerson">
 	    	<h3>Dodanie osoby za pomocą Local State</h3>
 	    	<input  type='text' placeholder='wpisz imię...' onChange={nameChangeHandler} value={personNameHook}/>
 	    	<input  type='number' placeholder='wpisz wiek...' onChange={ageChangeHandler} value={personAgeHook}/>
-	        <button onClick={() => props.personAdd(personNameHook, personAgeHook)}>Dodaj Osobę</button>
+	        <button onClick={
+	        	() => {
+	        		props.personAdd(personNameHook, personAgeHook);
+					personNameSetHook('');
+					personAgeSetHook(0);
+				}
+			}>Dodaj Osobę</button>
 	    </div>
 	);
 }
