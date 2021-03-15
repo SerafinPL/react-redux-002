@@ -6,7 +6,7 @@ import AddPerson from '../components/AddPerson/AddPerson';
 import AddPersonState from '../components/AddPerson/AddPersonState';
 import * as actions from '../action';
 
-class Persons extends Component {
+const Persons = (props) => {
     // state = {
     //     persons: []
     // }
@@ -28,30 +28,30 @@ class Persons extends Component {
     //     } );
     // }
 
-    render () {
+    
         return (
             <div>
                 <AddPerson 
-                    personAdded={this.props.personAdd} 
-                    changeInputName={this.props.changeInName} 
-                    valueName={this.props.name}
-                    changeInputAge={this.props.changeInAge} 
-                    valueAge={this.props.age}
+                    personAdded={props.personAdd} 
+                    changeInputName={props.changeInName} 
+                    valueName={props.name}
+                    changeInputAge={props.changeInAge} 
+                    valueAge={props.age}
                 />
                 <AddPersonState 
-                    personAdd={this.props.personAddLocal} 
+                    personAdd={props.personAddLocal} 
                     
                 />
-                {this.props.personsState.map(person => (
+                {props.personsState.map(person => (
                     <Person 
                         key={person.id}
                         name={person.name} 
                         age={person.age} 
-                        clicked={() => this.props.personDel(person.id)}/>
+                        clicked={() => props.personDel(person.id)}/>
                 ))}
             </div>
         );
-    }
+    
 }
 
 const mapStateToProps = state => {
